@@ -1,0 +1,192 @@
+:root {
+    --bg: #ddb551;
+    --main-color: #51a1c4;
+    --red: #b13f54;
+    --black: #000;
+    --white: #fff;
+    --border: 2px solid var(var(--black));
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+}
+
+/* Doraemon face */
+.doraemon {
+    --size: 500px;
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    border: 2px solid var(--black);
+    position: relative;
+    transition: background-color 1s ease;
+}
+
+.white {
+    --size: 400px;
+    width: var(--size);
+    height: calc(var(--size) - 62px);
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white);
+    left: calc(50% - var(--size) / 2);
+    border-radius: 50%;
+    border: 2px solid var(--black);
+}
+
+/* Doraemon eyes */
+.eye {
+    width: 130px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: var(--white);
+    border: 2px solid var(--black);
+    position: absolute;
+    top: -75px;
+}
+
+.eye--left {
+    left: calc(50% - 130px);
+}
+
+.eye--right {
+    right: calc(50% - 130px);
+}
+
+.eye-black {
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: var(--black);
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - var(--size) / 2);
+    transform-origin: top;
+}
+
+.eye-black::after {
+    content: '';
+    --size: 20px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: var(--white);
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 10px);
+}
+
+/* Doraemon nose */
+.nose {
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--red);
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - var(--size) / 2);
+}
+
+.nose::after {
+    --size: 20px;
+    content: '';
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: var(--white);
+    position: absolute;
+    top: 10px;
+    left: 20%;
+}
+
+/* Doraemon mouth */
+.mouth {
+    --size: 30px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: var(--border);
+    position: absolute;
+    bottom: 90px;
+    left: calc(50% - var(--size) / 2);
+    background-color: var(--red);
+}
+
+.mouth::before {
+    content: '';
+    width: 2px;
+    height: 106px;
+    background-color: var(--black);
+    position: absolute;
+    bottom: 100%;
+    left: calc(50% - 1px);
+}
+
+/* *Doraemon mustache */
+.mustache {
+    position: absolute;
+    height: 2px;
+    width: 150px;
+    top: 120px;
+    background-color: var(--black);
+}
+
+.mustache--left {
+    left: 0;
+    transform-origin: right;
+    transform: rotate(20deg);
+}
+
+.mustache--left.two {
+    left: -10px;
+    transform: rotate(0);
+}
+
+.mustache--left.three {
+    left: 0;
+    transform: rotate(-20deg);
+}
+
+.mustache--right {
+    right: 0;
+    transform-origin: left;
+    transform: rotate(-20deg);
+}
+
+.mustache--right.two {
+    right: -10px;
+    transform: rotate(0);
+}
+
+.mustache--right.three {
+    right: 0;
+    transform: rotate(20deg);
+}
+
+.mustache.two {
+    top: 145px;
+}
+
+.mustache.three {
+    top: 170px;
+}
